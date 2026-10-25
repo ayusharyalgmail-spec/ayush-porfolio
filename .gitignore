@@ -1,0 +1,17 @@
+node_modules
+.next
+out
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+playwright-report
+test-results
+.lighthouseci
+.vercel
+.claude
+productionproject/
+productionproject.zip
+make-production.bat
+0?-*.md
+
