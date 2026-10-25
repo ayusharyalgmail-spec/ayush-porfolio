@@ -7,7 +7,7 @@ import { getSiteData, siteUrl } from "@/lib/data";
 export const revalidate = 60;
 
 export default async function Home() {
-  const { settings, projects, skills, testimonials } = await getSiteData();
+  const { settings, projects, skills, testimonials, aboutChapters } = await getSiteData();
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -29,7 +29,7 @@ export default async function Home() {
         <Marquee />
         <Projects projects={projects} />
         <Skills skills={skills} />
-        <About s={settings} />
+        <About s={settings} chapters={aboutChapters} />
         <Proof projects={projects} testimonials={testimonials} />
         <Connect s={settings} />
       </main>

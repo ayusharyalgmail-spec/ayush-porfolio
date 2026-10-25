@@ -1,13 +1,13 @@
-import type { Project, Settings, Skill, Testimonial } from "@/lib/schemas";
+import type { AboutChapter, Project, Settings, Skill, Testimonial } from "@/lib/schemas";
 
-/** Fallback content used when Supabase is not configured or unreachable. Mirrors supabase/migrations/0001_init.sql. */
+/** Fallback content used when Supabase is not configured or unreachable. Mirrors supabase/migrations/0001_init.sql and 0005_about_chapters.sql. */
 export const seedSettings: Settings = {
-  location: "Hetauda, Nepal",
-  role_line: "Software builder · Hetauda, Nepal",
+  location: "Simara, Nepal",
+  role_line: "Grade 12 Student · Software Explorer",
   hero_line_1: "I build software",
-  hero_line_2: "businesses run on.",
+  hero_line_2: "and explore code.",
   hero_intro:
-    "I build software that helps businesses operate smarter — from websites and Android apps to custom dashboards, backend systems, and automation.",
+    "18-year-old Grade 12 student at NRVM in Simara, Nepal. Learning and building applications with .NET, desktop systems, and web technologies.",
   open_to_work: true,
   email: "ayushytaryal@gmail.com",
   email_2: "ayusharyalgmail@gmail.com",
@@ -15,12 +15,98 @@ export const seedSettings: Settings = {
   whatsapp: "9823716862",
   github_url: null,
   instagram_url: null,
+  about_heading: "Curiosity made me a builder.",
+  about_lead: "I am an 18-year-old student at NRVM in Simara, Nepal, exploring software development, .NET, desktop, and mobile applications.",
+  age: "18",
   about_1:
-    "I started with school projects and moved to production software for The BC Cargo & Courier Service, a family courier business in Hetauda. I built its website, Android app, billing software and analytics myself.",
+    "I am an 18-year-old Grade 12 student at NRVM in Simara, Nepal, with a strong interest in technology, software, computers, networking, and AI. I enjoy exploring how software works and learning to build applications, particularly with .NET, desktop development, and mobile app development.",
   about_2:
-    "I use AI coding tools, but I direct the design and check the code. My rule: inspect first, change carefully, test, then report exactly what changed.",
+    "Before I started coding, I was fascinated by space science and enjoyed learning about the universe, physics, and how things work.",
   photo_url: "/profile.webp",
 };
+
+export const seedAboutChapters: AboutChapter[] = [
+  {
+    id: "00000000-0000-4000-8000-000000000101",
+    badge: "01 / THE BEGINNING",
+    title: "Curiosity Made Me a Builder",
+    subtitle: "Grade 12 Student · NRVM, Simara",
+    theme: "cosmic",
+    paragraphs:
+      "I am an 18-year-old Grade 12 student at NRVM in Simara, Nepal, with a strong interest in technology, software, computers, networking, and AI. I enjoy exploring how software works and learning to build applications, particularly with .NET, desktop development, and mobile app development.\n\nBefore I started coding, I was fascinated by space science and enjoyed learning about the universe, physics, and how things work.",
+    tech_tags: ["Space Science", "Physics", ".NET", "Computer Science"],
+    stat_label_1: "Age",
+    stat_val_1: "18 Years Old",
+    stat_label_2: "School",
+    stat_val_2: "NRVM, Simara",
+    sort_order: 1,
+    published: true,
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000102",
+    badge: "02 / FIRST EXPOSURE",
+    title: "My First Steps into Code",
+    subtitle: "Grade 7 · CodeWithHarry & My Father",
+    theme: "code",
+    paragraphs:
+      "In Grade 7, I started learning programming through CodeWithHarry's YouTube tutorials. My father introduced me to HTML, which helped me understand how a simple text file could become a webpage.\n\nThat was the beginning of my coding journey. I started exploring more, learning new concepts, and gradually developing a deeper interest in programming and software development.",
+    tech_tags: ["HTML", "CSS", "YouTube Tutorials", "Web Basics"],
+    stat_label_1: "Started",
+    stat_val_1: "Grade 7",
+    stat_label_2: "First Spark",
+    stat_val_2: "Father introduced HTML",
+    sort_order: 2,
+    published: true,
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000103",
+    badge: "03 / EXPERIMENTATION",
+    title: "Exploring Memory, APIs, and .NET",
+    subtitle: "Grade 10 · Practical Logic & Systems",
+    theme: "experiment",
+    paragraphs:
+      "By Grade 10, I was exploring programming beyond the basics. I started experimenting with Free Fire-related desktop cheats built with .NET, including memory manipulation, AOB (Array of Bytes) scanning, and understanding how applications interact with APIs.\n\nI also explored KeyAuth integration and learned more about application behavior, memory, and the logic behind these tools. These experiments helped me improve my practical programming knowledge and understand concepts that I wanted to explore further.",
+    tech_tags: [".NET", "Memory Manipulation", "AOB Scanning", "APIs", "KeyAuth"],
+    stat_label_1: "Focus",
+    stat_val_1: "Memory & APIs",
+    stat_label_2: "Platform",
+    stat_val_2: ".NET Desktop",
+    sort_order: 3,
+    published: true,
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000104",
+    badge: "04 / REAL-WORLD WORK",
+    title: "Working on Real Projects",
+    subtitle: "Focus Collaboration · The BC Cargo & Courier",
+    theme: "product",
+    paragraphs:
+      "I am currently working with Focus on The BC Cargo & Courier's website and its related systems. My work includes website development, billing-related functionality, the admin panel, backend logic, and database-related tasks.\n\nThis experience gives me an opportunity to apply what I learn while working on software that supports real business operations.",
+    tech_tags: ["Website Dev", "Billing Logic", "Admin Panel", "Database / Supabase"],
+    stat_label_1: "Client / Work",
+    stat_val_1: "The BC Cargo",
+    stat_label_2: "Role",
+    stat_val_2: "Website & Billing Logic",
+    sort_order: 4,
+    published: true,
+  },
+  {
+    id: "00000000-0000-4000-8000-000000000105",
+    badge: "05 / FUTURE VISION",
+    title: "A Marketplace for Software Projects",
+    subtitle: "Aspirational Goal · Digital Creator Platform",
+    theme: "vision",
+    paragraphs:
+      "One of my future goals is to build a platform where I can sell my own digital projects and software to vendors.\n\nI want each vendor to have a dedicated URL, access to purchased projects, and a dashboard where they can manage their products and related information. I am still developing this idea and want to turn it into a practical project as my skills grow.",
+    tech_tags: ["Multi-Vendor", "Storefront URLs", "Vendor Dashboards", "Digital Marketplace"],
+    stat_label_1: "Goal",
+    stat_val_1: "Vendor Platform",
+    stat_label_2: "Status",
+    stat_val_2: "Concept in Development",
+    sort_order: 5,
+    published: true,
+  },
+];
 
 const p = (n: number, x: Omit<Project, "id" | "sort_order" | "published" | "image_url" | "live_url" | "role" | "features"> & Partial<Pick<Project, "image_url" | "live_url" | "role" | "features">>): Project => ({
   id: `00000000-0000-4000-8000-00000000000${n}`,

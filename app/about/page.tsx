@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 };
 
 export default async function AboutPage() {
-  const { settings } = await getSiteData();
+  const { settings, aboutChapters } = await getSiteData();
   return (
-    <Shell s={settings} title="About me" icon="🙋" lead="I learn by building things people use, then fixing what breaks.">
-      <About s={settings} bare />
+    <Shell s={settings} title={settings.about_heading || "About me"} icon="🙋" lead={settings.about_lead || settings.about_1}>
+      <About s={settings} chapters={aboutChapters} bare />
     </Shell>
   );
 }

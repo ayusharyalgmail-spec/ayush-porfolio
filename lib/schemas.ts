@@ -88,8 +88,30 @@ export const settingsSchema = z.object({
   instagram_url: optUrl,
   about_1: z.string().trim().min(1).max(1000),
   about_2: optText(1000),
+  about_heading: optText(160),
+  about_lead: optText(400),
+  age: optText(20),
   photo_url: optImage,
 });
+
+export const CHAPTER_THEMES = ["cosmic", "code", "experiment", "product", "vision"] as const;
+export type ChapterTheme = (typeof CHAPTER_THEMES)[number];
+
+export const aboutChapterSchema = z.object({
+  badge: z.string().trim().min(1).max(80),
+  title: z.string().trim().min(1).max(120),
+  subtitle: optText(160),
+  theme: z.enum(CHAPTER_THEMES),
+  paragraphs: z.string().trim().min(1).max(3000),
+  tech_tags: list(12),
+  stat_label_1: optText(60),
+  stat_val_1: optText(60),
+  stat_label_2: optText(60),
+  stat_val_2: optText(60),
+  sort_order: order,
+  published: bool,
+});
+export const aboutChapterRow = aboutChapterSchema.extend({ id });
 
 export const messageRow = z.object({
   id,
@@ -114,5 +136,7 @@ export const loginSchema = z.object({ email: z.email().max(120), password: z.str
 export type Project = z.infer<typeof projectRow>;
 export type Skill = z.infer<typeof skillRow>;
 export type Testimonial = z.infer<typeof testimonialRow>;
+export type AboutChapter = z.infer<typeof aboutChapterRow>;
 export type Settings = z.infer<typeof settingsSchema>;
 export type Message = z.infer<typeof messageRow>;
+

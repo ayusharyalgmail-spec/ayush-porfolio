@@ -6,6 +6,7 @@ import { ThemeToggle } from "@/components/site/ThemeToggle";
 
 const ICONS: Record<string, React.ReactNode> = {
   dashboard: <><rect x="3" y="3" width="7" height="9" rx="1.5" /><rect x="14" y="3" width="7" height="5" rx="1.5" /><rect x="14" y="12" width="7" height="9" rx="1.5" /><rect x="3" y="16" width="7" height="5" rx="1.5" /></>,
+  about_chapters: <><circle cx="12" cy="7" r="4" /><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2" /></>,
   projects: <><rect x="3" y="7" width="18" height="13" rx="2" /><path d="M9 7V4h6v3" /></>,
   skills: <path d="M4 7l5 5-5 5M12 18h8" />,
   testimonials: <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z" />,
@@ -15,6 +16,7 @@ const ICONS: Record<string, React.ReactNode> = {
 
 const LINKS = [
   ["/admin", "Dashboard", "dashboard"],
+  ["/admin/about_chapters", "About Story", "about_chapters"],
   ["/admin/projects", "Projects", "projects"],
   ["/admin/skills", "Skills", "skills"],
   ["/admin/testimonials", "Testimonials", "testimonials"],

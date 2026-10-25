@@ -130,9 +130,10 @@ export function Skills({ skills, bare }: { skills: Skill[]; bare?: boolean }) {
 }
 
 import { AboutStory } from "@/components/site/AboutStory";
+import type { AboutChapter } from "@/lib/schemas";
 
-export function About({ s, bare }: { s: Settings; bare?: boolean }) {
-  return <AboutStory s={s} bare={bare} />;
+export function About({ s, chapters, bare }: { s: Settings; chapters?: AboutChapter[]; bare?: boolean }) {
+  return <AboutStory s={s} chapters={chapters} bare={bare} />;
 }
 
 export function Proof({ projects, testimonials, bare }: { projects: Project[]; testimonials: Testimonial[]; bare?: boolean }) {
