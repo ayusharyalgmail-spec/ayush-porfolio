@@ -129,26 +129,10 @@ export function Skills({ skills, bare }: { skills: Skill[]; bare?: boolean }) {
   );
 }
 
+import { AboutStory } from "@/components/site/AboutStory";
+
 export function About({ s, bare }: { s: Settings; bare?: boolean }) {
-  return (
-    <section id="about" aria-labelledby="about-title">
-      <div className="wrap">
-        <Head id="about-title" icon="🙋" title="About me" lead="I learn by building things people use, then fixing what breaks." bare={bare} />
-        <div className="about">
-          <div className="card pf" data-fx data-tilt="4" data-reveal>
-            <div className="ph-wrap">
-              <div className="ph-in">
-                {s.photo_url ? <SafeImage src={s.photo_url} alt="Portrait of Ayush Aryal" fill sizes="260px" /> : <span className="ini" aria-hidden="true">AA</span>}
-              </div>
-            </div>
-            <div><h3>Ayush Aryal</h3><div className="role">{s.role_line}</div></div>
-            <p className="where"><span aria-hidden="true">📍</span> {s.location}</p>
-          </div>
-          <div className="card copy" data-fx data-reveal><p>{s.about_1}</p>{s.about_2 && <p>{s.about_2}</p>}</div>
-        </div>
-      </div>
-    </section>
-  );
+  return <AboutStory s={s} bare={bare} />;
 }
 
 export function Proof({ projects, testimonials, bare }: { projects: Project[]; testimonials: Testimonial[]; bare?: boolean }) {
